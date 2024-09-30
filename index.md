@@ -61,10 +61,10 @@ The metadata described in this crate SHOULD be at least the minimal set required
 
 _eResearch Project Archive Crate's_ MUST:
 
-- describe data associated with a ONE research project.
+- describe data associated with ONE research project.
 - describe only data stored locally with the crate.
 - describe data stored within University of Auckland systems.
-- Where at least one researcher responsible for the data is within University of Auckland at the time of its creation.
+  - Where at least one researcher responsible for the data is affiliated with The University of Auckland's at the time of the data's creation.
 - describe data that is archived and not in active use.
 
 _eResearch Project Archive Crates_ MUST be stored as a valid [BagIT](https://datatracker.ietf.org/doc/html/rfc8493) _Bag_. with the `ro_crate_metadata.json` and all data within the `data\` directory of the _Bag_. https://datatracker.ietf.org/doc/html/rfc8493
