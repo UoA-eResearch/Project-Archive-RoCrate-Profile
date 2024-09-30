@@ -84,7 +84,7 @@ The `root data entity` (dataset with ("@id": "./")) describes the overall datase
 
 the `root data entity` MUST list the `Project` this data is associated with via the `project` property.
 
-All files and directories that are children of the `root data entity` are considered part of the _eResearch Project Archive Crate_. They MAY be listed using the `hasPart` property on the `root data entity`.
+All files and directories that are children of the `root data entity` are considered part of the _eResearch Project Archive Crate_. They MAY be specifically listed using the `hasPart` property on the `root data entity`.
 
 the `root data entity` MUST list the sensitivity classification of the data stored in the _crate_ via the `dataClassification` property as this informs [research data retention](https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-classification) periods.
 
@@ -97,10 +97,10 @@ the `root data entity` MUST list the school or faculty this data belongs to via 
 |---|----|---|-----|---|
 |**Root data entity ("@id": "./")**  | conformsTo   | MUST   | Text | A URI for the permalinked version of this document and a URI permalink to the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1) `https://w3id.org/ro/crate/1.1`|
 |**Root data entity ("@id": "./")**  | project   | MUST   |Project| The Project associated with this data|
-|**Root data entity ("@id": "./")**  | sourceOrganization   | MUST   | Organisation|The school or faculty linked with this research project and point of contact if PI is not available|
+|**Root data entity ("@id": "./")**  | sourceOrganization   | MUST   | Organisation|The school or faculty linked with this research project and point of contact if `projectOwner` is not available|
 |**Root data entity ("@id": "./")**  | dataClassification   | MUST   | Text | The classification of the data for [research data retention](https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-classification) and [information security](https://www.protectivesecurity.govt.nz/classification/overview).  MUST be ONE of ["Public", "Internal", "Sensitive", or "Restricted"]. Default "Sensitive".|
 |**Root data entity ("@id": "./")**  | name   | MAY   | Text | A name describing this dataset.|
-|**Root data entity ("@id": "./")**  | hastPart   | MAY   | Dataset OR Datafile | Child datasets and datafiles used to sub-section and further describe this archive.|
+|**Root data entity ("@id": "./")**  | hastPart   | MAY   | Dataset OR Datafile | Child Datasets and Files used to sub-section and further describe this archive.|
 
 ## Project
 
@@ -110,7 +110,7 @@ The `Project` describes the majority of the information for the research project
 
 a `Project` MUST provide ONE owner of this project and _crate_ via `projectOwner`
 
-Additional people associated with the project MAY be provided via the 'dataContact`, `dataOwner` and `member` properties.
+Additional people associated with the project MAY be provided via the `dataContact` , `dataOwner` and `member` properties.
 
 ### Terms
 
@@ -150,7 +150,7 @@ Additional people associated with the project MAY be provided via the 'dataConta
 
 ## Additional Datasets
 
-Additional `Dataset` and `Datafile` objects may be listed in the crate for more granular information of research data.
+Additional `Dataset` and `Datafile` objects MAY be listed in the crate for more granular information of research data.
 
 They are still governed by the information provided in the `root data entity` and its associated `Project` and so all data entities MUST be listed via `hasPart` in the `root data entity`.
 
