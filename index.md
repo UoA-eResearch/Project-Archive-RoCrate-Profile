@@ -127,7 +127,6 @@ Additional people associated with the project MAY be provided via the `dataConta
 |**Project**  | name  | SHOULD  | Text | Title describing the project.|
 |**Project**  | identifier  | MAY  | Text OR URL | additional identifiers associated with the project.|
 |**Project**  | name  | SHOULD  | Text | Title describing the project.|
-|**Project**  | name  | SHOULD  | Text | Title describing the project.|
 |**Project**  | endDate  | MUST  | Text | The date that this project ends. Informs when archived data can be safely deleted based on classification and retention policy.|
 |**Project**  | startDate  | MAY  | Date | The date this project starts.|
 |**Project**  | dataOwner  | MAY | Person | Project members who own the data stored within, for example PHD students.|
