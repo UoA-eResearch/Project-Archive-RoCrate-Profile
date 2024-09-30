@@ -17,9 +17,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 
-topnav_title: eResearch Project Archive Crate
 
 title: eResearch_Project_Archive_Crate
 email: James.Love@auckland.ac.nz
@@ -32,6 +30,10 @@ github_username:  JLoveUOA
 
 # Build settings
 # theme: minima
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
+
+topnav_title: eResearch Project Archive Crate
+
 theme_variables: 
   theme_color: 1f8787
   topnav:
