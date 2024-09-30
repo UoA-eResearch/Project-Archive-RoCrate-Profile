@@ -64,12 +64,12 @@ _eResearch Project Archive Crate's_ MUST:
 - describe data associated with a ONE research project.
 - describe only data stored locally with the crate.
 - describe data stored within University of Auckland systems.
-- Where at least one researcher responsible for the data is within University of Auckland at the time of it's creation.
+- Where at least one researcher responsible for the data is within University of Auckland at the time of its creation.
 - describe data that is archived and not in active use.
 
 _eResearch Project Archive Crates_ MUST be stored as a valid [BagIT](https://datatracker.ietf.org/doc/html/rfc8493) _Bag_. with the `ro_crate_metadata.json` and all data within the `data\` directory of the _Bag_. https://datatracker.ietf.org/doc/html/rfc8493
 
-_eResearch Project Archive Crates_ SHOULD be stored as a single file archive such as a `.tar` (https://lists.gnu.org/archive/html/info-gnu/2023-07/msg00005.html) or `.zip` containing the _Bag_ which in turns contains all metadata and data. 
+_eResearch Project Archive Crates_ SHOULD be stored as a single file archive such as a `.tar` (https://lists.gnu.org/archive/html/info-gnu/2023-07/msg00005.html) or `.zip` containing the _Bag_ which in turns contains all metadata and data.
 
 _eResearch Project Archive Crates_ MUST contain one `Project` describing the research project associated with the archived data.
 
@@ -80,11 +80,11 @@ The Metadata File Descriptor `conformsTo` MUST be a list that contains at least 
 
 ## Root Data Entity
 
-The `root data entity` (dataset with ("@id": "./")) describes the overall dataset found within the _eResearch Project Archive Crate_ as a whole. 
+The `root data entity` (dataset with ("@id": "./")) describes the overall dataset found within the _eResearch Project Archive Crate_ as a whole.
 
 the `root data entity` MUST list the `Project` this data is associated with via the `project` property.
 
-All files and directories that are children of the `root data entity` are considered part of the _eResearch Project Archive Crate_. They MAY be lised using the `hasPart` property on the `root data entity`.
+All files and directories that are children of the `root data entity` are considered part of the _eResearch Project Archive Crate_. They MAY be listed using the `hasPart` property on the `root data entity`.
 
 the `root data entity` MUST list the sensitivity classification of the data stored in the _crate_ via the `dataClassification` property as this informs [research data retention](https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-classification) periods.
 
@@ -97,20 +97,20 @@ the `root data entity` MUST list the school or faculty this data belongs to via 
 |---|----|---|-----|---|
 |**Root data entity ("@id": "./")**  | conformsTo   | MUST   | Text | A URI for the permalinked version of this document and a URI permalink to the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1) `https://w3id.org/ro/crate/1.1`|
 |**Root data entity ("@id": "./")**  | project   | MUST   |Project| The Project associated with this data|
-|**Root data entity ("@id": "./")**  | sourceOrganization   | MUST   | Organization|The school or faculty linked with this research project and point of contact if PI is not available| 
+|**Root data entity ("@id": "./")**  | sourceOrganization   | MUST   | Organisation|The school or faculty linked with this research project and point of contact if PI is not available|
 |**Root data entity ("@id": "./")**  | dataClassification   | MUST   | Text | The classification of the data for [research data retention](https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-classification) and [information security](https://www.protectivesecurity.govt.nz/classification/overview).  MUST be ONE of ["Public", "Internal", "Sensitive", or "Restricted"]. Default "Sensitive".|
 |**Root data entity ("@id": "./")**  | name   | MAY   | Text | A name describing this dataset.|
 |**Root data entity ("@id": "./")**  | hastPart   | MAY   | Dataset OR Datafile | Child datasets and datafiles used to sub-section and further describe this archive.|
 
 ## Project
 
-the `Project` describes the majority of the information for the research project associated with the data in the _crate_. It should be used to inform decisions regarding data archviing deletion and access controls to sensitive data.
+The `Project` describes the majority of the information for the research project associated with the data in the _crate_. It should be used to inform decisions regarding data archiving deletion and access controls to sensitive data.
 
 `Projects` MUST list their unique eResearch Project Database ID as their `@id`
 
 a `Project` MUST provide ONE owner of this project and _crate_ via `projectOwner`
 
-Additional people associated with the project MAY be provided via the `dataContact`, `dataOwner` and `member` properties.
+Additional people associated with the project MAY be provided via the 'dataContact`, `dataOwner` and `member` properties.
 
 ### Terms
 
@@ -118,7 +118,7 @@ Additional people associated with the project MAY be provided via the `dataConta
 |---|----|---|-----|---|
 |**Project**  | @id  | MUST   | Text | A unique ID for this project. Use code from eResearch Project Database if possible. e.g. ("@id":"#cer03107")|
 |**Project**  | @type  | MUST   | Text | MUST include "Project".|
-|**Project**  | projectOwner  | MUST  | Person | The owner of this project and primary contact for data retention. (Usually Primary Investigatior)|
+|**Project**  | projectOwner  | MUST  | Person | The owner of this project and primary contact for data retention. (Usually Primary Investigator)|
 |**Project**  | endDate  | MUST  | Date | The date that this project ends. Informs when archived data can be safely deleted (for instance for public data, data may be deleted 6 years after project end date).|
 |**Project**  | service  | MAY  | Text | Unique ID's of services associated with this project such as Virtual Machines or storage.|
 |**Project**  | division  | MAY  | Text | The division linked with this project. e.g. "CIVENV"|
@@ -138,7 +138,7 @@ Additional people associated with the project MAY be provided via the `dataConta
 
 ## People
 
-`Person` records in the _crate_ SHOULD provide sufficient information to unniquley identify a person within the University of Auckland system and if possible contact them regarding the data in the _crate_.
+`Person` records in the _crate_ SHOULD provide sufficient information to uniquely identify a person within the University of Auckland system and if possible contact them regarding the data in the _crate_.
 
 ### Terms
 
@@ -146,13 +146,13 @@ Additional people associated with the project MAY be provided via the `dataConta
 |---|----|---|-----|---|
 |**Person**  | @id  | MUST  | Text | A UPI that uniquely identifies this person in the University Active Directory Lookup. e.g. "pmcg006"|
 |**Person**  | email  | SHOULD  | Email | an email address that may be used to contact this person.
-|**Person**  | name | MAY  | name | The full name identifiying this person.
+|**Person**  | name | MAY  | name | The full name identifying this person.
 
 ## Additional Datasets
 
 Additional `Dataset` and `Datafile` objects may be listed in the crate for more granular information of research data.
 
-They are still governed by the information provided in the `root data entity` and it's associated `Project` and so all data entities MUST be listed via `hasPart` in the `root data entity`.
+They are still governed by the information provided in the `root data entity` and its associated `Project` and so all data entities MUST be listed via `hasPart` in the `root data entity`.
 
 ### Terms
 
@@ -163,13 +163,13 @@ They are still governed by the information provided in the `root data entity` an
 |**File**  | @id  | MUST  | Relative File Path | as per [RO-Crate Specification](https://www.researchobject.org/ro-crate/specification/1.1/data-entities.html): MUST be either a URI Path relative to the RO Crate root, or an absolute URI. |
 |**File**   | name  | SHOULD  | Text | A meaningful name to describe this file. |
 |**Dataset**   | hastPart   | MAY   | Dataset OR Datafile | Child datasets and datafiles used to sub-section and further describe this archive.|
-|**File** OR **Dataset**   | isPartOf  | MAY  | Dataset | The dataset this entity is part of, inverse protery of hasPart |
+|**File** OR **Dataset**   | isPartOf  | MAY  | Dataset | The dataset this entity is part of, inverse property of hasPart |
 
 ## Delete Actions
 
 When a dataset that a *crate* describes is deleted a `DeleteAction` entity SHOULD be added to the crate to record this with an `actionStatus` as `"CompletedActionStatus"` and an `endTime` of the date the data was deleted.
 
-If deletion of data is scheduled and date of deletion is known in advance (such as due to a data rentention policy) a `DeleteAction` MAY be used to describe the scheduled deletion event with an `actionStatus` as `"PotentialActionStatus"` and an `endTime` of the date the data is to be deleted.
+If deletion of data is scheduled and date of deletion is known in advance (such as due to a data retention policy) a `DeleteAction` MAY be used to describe the scheduled deletion event with an `actionStatus` as `"PotentialActionStatus"` and an `endTime` of the date the data is to be deleted.
 
 The *crate* itself MUST NOT be deleted, and should be kept as a record of the data and when it was deleted.
 
