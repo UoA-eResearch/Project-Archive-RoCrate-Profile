@@ -159,7 +159,7 @@ The *crate* itself MUST NOT be deleted, and should be kept as a record of the da
 * [ro-crate-metadata.json](exampleCrate/ro-crate-metadata.json)
 
 
-```JSON
+```json
 {
     "@context": "https://w3id.org/ro/crate/1.1/context",
     "@graph": [
