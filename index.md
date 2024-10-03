@@ -157,6 +157,8 @@ The *crate* itself MUST NOT be deleted, and should be kept as a record of the da
 
 ## Example eResearch Project Archive Crate
 * [ro-crate-metadata.json](exampleCrate/ro-crate-metadata.json)
+
+
 ```JSON
 {
     "@context": "https://w3id.org/ro/crate/1.1/context",
