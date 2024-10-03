@@ -2,38 +2,11 @@ Based on : [https://github.com/workflowhub-eu/about/tree/master/Workflow-RO-Crat
 
 # eResearch Project Archive Crate
 
-<!--  https://signposting.org/FAIR/  markup --->
-
-<!-- <link href="https://github.com/ResearchObject/ro-crate/blob/profiles/docs/1.2-DRAFT/profiles.md" rel="type"  />
-<link href="http://purl.org/dc/terms/Standard" rel="type"  />
-<link href="https://schema.org/CreativeWork" rel="type"  />
-
-<link href="https://spdx.org/licenses/BSD-3-Clause" rel="license"  />
-
-<link href="ro-crate-metadata.json" rel="describedby" type='application/ld+json; profile="https://w3id.org/ro/crate"' />
-<link href="ro-crate-metadata.jsonld" rel="describedby" type='application/ld+json; profile="https://w3id.org/ro/crate"'  />
-<link href="ro-crate-preview.html" rel="describedby" type='text/html'  /> -->
-
-<!-- repeat of hasPart in RO-Crate -->
-<!-- <link href="index.html" rel="item"  />
-<link href="licenses/" rel="item" />
-<link href="languages/" rel="item" />
-<link href="example/" rel="item" />
-<link href="https://w3id.org/ro/crate/1.1/context" rel="item" />
-<link href="https://pypi.org/project/rocrate/" rel="item" />
-<link href="https://github.com/inab/WfExS-backend/" rel="item" />
-<link href="https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263" rel="item" />
-<link href="https://workflowhub.eu/" rel="item" />
-<link href="https://bioschemas.org/ComputationalWorkflow" rel="item" />
-<link href="https://bioschemas.org/FormalParameter" rel="item" />
-<link href="http://schema.org/HowTo" rel="item" />
-<link href="http://schema.org/ImageObject" rel="item" />
-<link href="https://github.com/KockataEPich/CheckMyCrate/blob/master/CheckMyCrate/profile_library/ro_crate_1.1_basic.json" rel="item" /> -->
-
-<!-- ![GPG RO-Crate]({{ '/assets/img/ro-crate-workflow.svg' | relative_url }})  -->
 
 * Permalink: `TODO`
 * Version: [0.0.1](https://github.com/UoA-eResearch/ro-crate-py/pull/1)
+* Test Crate-O [Mode](project_archivecrate_mode.json)
+* Preliminary [Terms](https://github.com/JLoveUOA/eres_project_archive-ro-terms/tree/master/eres-project-archive)
 
 <!-- As Encrypted crates differ for how they are constructed in memory as opposed to how they are written on disk a profile crate is provided for each.
 * [Profile Crate - In Memory `ro-crate-metadata.json`](TODO)
@@ -183,5 +156,159 @@ The *crate* itself MUST NOT be deleted, and should be kept as a record of the da
 |**DeleteAction**  | endTime  | MUST  | DateTime | When the deletion of the data is to occur or has occurred.|
 
 ## Example eResearch Project Archive Crate
+* [ro-crate-metadata.json](exampleCrate/ro-crate-metadata.json)
+```JSON
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "conformsTo": [
+                "https://uoa-eresearch.github.io/Project-Archive-RoCrate-Profile/"
+            ],
+            "dataClassification": [
+                "Sensitive"
+            ],
+            "datePublished": "2024-10-03T01:05:33+00:00",
+            "hasPart": [
+                {
+                    "@id": "Vault/pancreatoblastoma/raw/"
+                },
+                {
+                    "@id": "Vault/pancreatoblastoma/bam/"
+                },
+                {
+                    "@id": "Vault/pancreatoblastoma/raw/rna/"
+                },
+                {
+                    "@id": "Vault/pancreatoblastoma/raw/rna/1806KHP-0132/A0006L_1.fastq.gz"
+                }
+            ],
+            "name": [
+                "Example Project Archive Crate"
+            ],
+            "project": [
+                {
+                    "@id": "#cer01502"
+                }
+            ],
+            "sourceOrganization": [
+                {
+                    "@id": "#UOA_FMHS"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            }
+        },
+        {
+            "@id": "Vault/pancreatoblastoma/bam/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "Vault/pancreatoblastoma/raw/rna/",
+            "@type": "Dataset"
+        },
+        {
+            "@id": "Vault/pancreatoblastoma/raw/rna/1806KHP-0132/A0006L_1.fastq.gz",
+            "@type": "File"
+        },
+        {
+            "@id": "#jcar001",
+            "@type": "Person",
+            "email": "JCarberry@psychoceramics.brown.com",
+            "identifier": "https://orcid.org/0000-0001-7760-1240",
+            "name": "Josiah Carberry"
+        },
+        {
+            "@id": "#tmon023",
+            "@type": "Person",
+            "email": "TeamMember1@psychoceramics.brown.com",
+            "name": "TeamMember1"
+        },
+        {
+            "@id": "#tmtw023",
+            "@type": "Person",
+            "email": "TeamMember2@psychoceramics.brown.com",
+            "name": "TeamMember2"
+        },
+        {
+            "@id": "#UOA_FMHS",
+            "@type": "Organization",
+            "name": "University Of Auckland Faculty of Medical and Health Science"
+        },
+        {
+            "@id": "#cer01502",
+            "@type": "Project",
+            "dataContact": [
+                {
+                    "@id": "#tmon023"
+                },
+                {
+                    "@id": "#tmtw023"
+                }
+            ],
+            "dataOwner": [
+                {
+                    "@id": "#tmon023"
+                },
+                {
+                    "@id": "#tmtw023"
+                }
+            ],
+            "description": "This storage will be used to keep the Polaris image data and bioinformatics analysis data. Vectra Polaris is a pathology imaging system that provides researchers unparalleled speed, performance, and versatility for extracting proteomic and morphometric information from tissue sections. Using the Polaris and bioinformatics/computational approaches, we will explore multiple biomarkers and functional cellular interactions in spatial context.",
+            "division": "CIVENV",
+            "dropbox": "virtualeyes-lab",
+            "endDate": "2024-10-02",
+            "identifier": [
+                "ressci202100031",
+                "1507"
+            ],
+            "member": [
+                {
+                    "@id": "#jcar001"
+                },
+                {
+                    "@id": "#tmon023"
+                },
+                {
+                    "@id": "#tmtw023"
+                }
+            ],
+            "name": "Bioinfceramics",
+            "projectOwner": [
+                {
+                    "@id": "#jcar001"
+                }
+            ],
+            "requirements": "Part of a funded project research,Requires human ethics research",
+            "researchDrive": "ressci202100031-polaris-bioinformatics",
+            "service": [
+                "cbarpuptst01",
+                "sc-cer00466-2"
+            ],
+            "startDate": "2024-10-02"
+        },
+        {
+            "@id": "#DeleteArchiveAction",
+            "@type": "DeleteAction",
+            "actionStatus": "PotentialActionStatus",
+            "endTime": "2024-10-02",
+            "targetCollection": [
+                {
+                    "@id": "./"
+                }
+            ]
+        }
+    ]
+}
 
-[TODO]
+```
