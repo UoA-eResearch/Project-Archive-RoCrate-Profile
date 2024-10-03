@@ -88,7 +88,7 @@ All files and directories that are children of the `root data entity` are consid
 
 the `root data entity` MUST list the sensitivity classification of the data stored in the _crate_ via the `dataClassification` property as this informs [research data retention](https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-classification) periods.
 
-the `root data entity` MUST list the school or faculty this data belongs to via the `sourceOrganization` as this will be the contact point if a `projectOwner` or `dataOwner` cannot be contacted based on the information provided in `project`.
+the `root data entity` MUST list the school or faculty this data belongs to via the `sourceOrganization`. This will be the contact point if a `projectOwner` or `dataOwner` cannot be contacted based on the information provided in `project`.
 
 
 ### Terms
@@ -106,11 +106,15 @@ the `root data entity` MUST list the school or faculty this data belongs to via 
 
 The `Project` describes the majority of the information for the research project associated with the data in the _crate_. It should be used to inform decisions regarding data archiving deletion and access controls to sensitive data.
 
-`Projects` MUST list their unique eResearch Project Database ID as their `@id`
+`Projects` MUST list their unique eResearch Project Database ID as their `@id`.
 
-a `Project` MUST provide ONE owner of this project and _crate_ via `projectOwner`
+a `Project` MUST provide ONE owner of this project and _crate_ via `projectOwner`.
 
 Additional people associated with the project MAY be provided via the `dataContact` , `dataOwner` and `member` properties.
+
+If the data stored within the _crate_ originates from a Dropbox or a Research Drive then the ID of that `dropbox` or `researchDrive` SHOULD be provided via their respective fields.
+
+The `endDate` describes the date the project ends, e.g. the end of a PHD project or research grant. [Research data retention](https://research-hub.auckland.ac.nz/managing-research-data/ethics-integrity-and-compliance/research-data-retention) dates may be inferred from this based on data classification this date and other factors (such as if this project was sensitive or relates to registered patients). 
 
 ### Terms
 
@@ -126,8 +130,6 @@ Additional people associated with the project MAY be provided via the `dataConta
 |**Project**  | description  | SHOULD  | Text | full description of the project.|
 |**Project**  | name  | SHOULD  | Text | Title describing the project.|
 |**Project**  | identifier  | MAY  | Text OR URL | additional identifiers associated with the project.|
-|**Project**  | name  | SHOULD  | Text | Title describing the project.|
-|**Project**  | endDate  | MUST  | Text | The date that this project ends. Informs when archived data can be safely deleted based on classification and retention policy.|
 |**Project**  | startDate  | MAY  | Date | The date this project starts.|
 |**Project**  | dataOwner  | MAY | Person | Project members who own the data stored within, for example PHD students.|
 |**Project**  | dataContact  | MAY  | Person | a contact for ownership of this data.|
