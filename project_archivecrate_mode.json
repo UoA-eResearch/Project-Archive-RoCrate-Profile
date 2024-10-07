@@ -15,6 +15,78 @@
       "description": ""
     }
   ],
+  "inputGroups" : 
+  [
+    {
+      "name": "About",
+      "help": "The core metadata for this RO-Crate and its subject matter.",
+      "inputs": [
+        "@id",
+        "@type",
+        "http://purl.org/dc/terms/conformsTo",
+        "http://schema.org/project",
+        "http://schema.org/name",
+        "http://schema.org/identifier",
+        "http://schema.org/description",
+        "http://schema.org/conformsTo",
+        "http://schema.org/datePublished",
+        "https://w3id.org/ro/terms/eres-project-archive#dataClassification",
+        "https://w3id.org/ro/terms/eres-project-archive#startDate",
+        "https://w3id.org/ro/terms/eres-project-archive#endDate",
+        "https://w3id.org/ro/terms/eres-project-archive#requirements",
+        "http://schema.org/requirements",
+        "http://schema.org/email",
+        "http://schema.org/actionStatus",
+        "http://schema.org/endTime",
+        "http://schema.org/endDate",
+        "http://schema.org/startDate"
+      ]
+    },
+    {
+      "name": "Related People, Orgs & Services",
+      "help": "The context for the creation of this RO-Crate; who made it, funded it etc.",
+      "inputs": [
+        "http://schema.org/sourceOrganization",
+        "https://w3id.org/ro/terms/eres-project-archive#projectOwner",
+        "https://w3id.org/ro/terms/eres-project-archive#dataOwner",
+        "https://w3id.org/ro/terms/eres-project-archive#dataContact",
+        "http://schema.org/member",
+        "https://w3id.org/ro/terms/eres-project-archive#service",
+        "https://w3id.org/ro/terms/eres-project-archive#division",
+        "https://w3id.org/ro/terms/eres-project-archive#dropbox",
+        "https://w3id.org/ro/terms/eres-project-archive#researchDrive"
+      ]
+    },
+    {
+      "name": "Structure",
+      "help": "For groups of elements, such as DefinedTerms",
+      "inputs": [
+        "http://pcdm.org/models#memberOf",
+        "http://pcdm.org/models#hasMember",
+        "http://schema.org/isPartOf",
+        "http://schema.org/hasPart",
+        "http://schema.org/targetCollection"
+
+      ]
+    }
+  ],
+  "lookup": {
+    "Language": {
+      "module": "datapack",
+      "fields": [
+        "@id",
+        "name"
+      ]
+    },
+    "Organization": {
+      "module": "ror"
+    }
+  },
+  "enabledClasses": [
+    "Dataset",
+    "Person",
+    "Project"
+  ],
   "classes": {
     "Dataset": {
       "hasSubclass": [],
